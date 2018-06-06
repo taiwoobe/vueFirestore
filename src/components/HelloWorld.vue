@@ -13,6 +13,7 @@
     <div class="container-fluid">
       <app-new-record></app-new-record>
       <div class="col-md-8">
+        <transition-group name="slide-fade" tag="div">
         <div class="col-md-4" v-for="(location, index) in locations" :key="index">
           <div class="panel panel-default" style="padding-left: 0px;padding-right: 0px;">
             <div class="panel-body">
@@ -24,6 +25,7 @@
             </div>
           </div>
         </div>
+        </transition-group>
       </div>
     </div>
   </div>
@@ -98,5 +100,15 @@ export default {
 }
 .small-button{
   padding: 4px 9px;
+}
+.slide-fade-enter-active {
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-leave-active {
+  transition: all .5s cubic-bezier(1.0, 0.5, 0.8, 1.0);
+}
+.slide-fade-enter, .slide-fade-leave-to {
+  transform: translateX(10px);
+  opacity: 0;
 }
 </style>

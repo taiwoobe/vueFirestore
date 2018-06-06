@@ -9,9 +9,9 @@
           <br>
           <div class="spinner-holder">
               <button class="btn btn-primary">Add Record</button>
-              <div class="spinner-class" v-if="addNewloading">
+              <!-- <div class="spinner-class" v-if="addNewloading">
                 <Spinner name="ball-scale-multiple" color="green" :noFadeIn="fader"/>
-              </div>
+              </div> -->
           </div>
       </form>
       </div>
@@ -41,8 +41,7 @@ export default {
             nativeToast({
               message: "Record Added !!!",
               type: "success",
-              icon: false,
-              edge: true
+              icon: false
             });
             this.name = '';
             this.imageUrl = '';
